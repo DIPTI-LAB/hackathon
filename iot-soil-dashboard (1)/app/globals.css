@@ -1,0 +1,247 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to techy-environmental theme with forest greens and tech blues */
+  --background: #f8fffe; /* Very light mint */
+  --foreground: #1a2e1a; /* Deep forest green */
+  --card: rgba(255, 255, 255, 0.85); /* Enhanced glassmorphism */
+  --card-foreground: #1a2e1a; /* Deep forest green for text */
+  --popover: rgba(255, 255, 255, 0.95); /* Light popover */
+  --popover-foreground: #1a2e1a; /* Deep forest green */
+  --primary: #16a34a; /* Vibrant green for primary actions */
+  --primary-foreground: #ffffff; /* White text */
+  --secondary: #0ea5e9; /* Tech blue for secondary actions */
+  --secondary-foreground: #ffffff; /* White text */
+  --muted: #f0fdf4; /* Very light green background */
+  --muted-foreground: #4ade80; /* Medium green for muted text */
+  --accent: #f59e0b; /* Amber accent for warnings/highlights */
+  --accent-foreground: #ffffff; /* White text */
+  --destructive: #ef4444; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White text */
+  --border: #d1fae5; /* Light green borders */
+  --input: #ffffff; /* White input fields */
+  --ring: rgba(22, 163, 74, 0.3); /* Green focus ring */
+  --chart-1: #16a34a; /* Primary green */
+  --chart-2: #0ea5e9; /* Tech blue */
+  --chart-3: #f59e0b; /* Amber */
+  --chart-4: #ef4444; /* Red */
+  --chart-5: #8b5cf6; /* Purple */
+  --radius: 0.875rem; /* Rounded corners */
+  --sidebar: rgba(240, 253, 244, 0.8); /* Light green glassmorphism */
+  --sidebar-foreground: #1a2e1a; /* Deep forest green */
+  --sidebar-primary: #16a34a; /* Primary green */
+  --sidebar-primary-foreground: #ffffff; /* White text */
+  --sidebar-accent: #0ea5e9; /* Tech blue accent */
+  --sidebar-accent-foreground: #ffffff; /* White text */
+  --sidebar-border: #d1fae5; /* Light green borders */
+  --sidebar-ring: rgba(22, 163, 74, 0.2); /* Green focus ring */
+}
+
+.dark {
+  /* Dark mode with deep forest and neon accents */
+  --background: #0a0f0a; /* Very dark forest */
+  --foreground: #dcfce7; /* Light green text */
+  --card: rgba(20, 30, 20, 0.85); /* Dark green glassmorphism */
+  --card-foreground: #dcfce7; /* Light green text */
+  --popover: rgba(20, 30, 20, 0.95); /* Dark green popover */
+  --popover-foreground: #dcfce7; /* Light green text */
+  --primary: #22c55e; /* Bright green primary */
+  --primary-foreground: #0a0f0a; /* Dark text on bright green */
+  --secondary: #0ea5e9; /* Tech blue secondary */
+  --secondary-foreground: #ffffff; /* White text */
+  --muted: #1a2e1a; /* Dark forest muted */
+  --muted-foreground: #86efac; /* Light green muted text */
+  --accent: #fbbf24; /* Bright amber accent */
+  --accent-foreground: #0a0f0a; /* Dark text */
+  --destructive: #f87171; /* Bright red */
+  --destructive-foreground: #ffffff; /* White text */
+  --border: #166534; /* Medium green borders */
+  --input: rgba(20, 30, 20, 0.8); /* Dark green input */
+  --ring: rgba(34, 197, 94, 0.4); /* Bright green focus ring */
+  --chart-1: #22c55e; /* Bright green */
+  --chart-2: #0ea5e9; /* Tech blue */
+  --chart-3: #fbbf24; /* Bright amber */
+  --chart-4: #f87171; /* Bright red */
+  --chart-5: #a78bfa; /* Light purple */
+  --sidebar: rgba(20, 30, 20, 0.8); /* Dark green sidebar */
+  --sidebar-foreground: #dcfce7; /* Light green text */
+  --sidebar-primary: #22c55e; /* Bright green primary */
+  --sidebar-primary-foreground: #0a0f0a; /* Dark text */
+  --sidebar-accent: #0ea5e9; /* Tech blue accent */
+  --sidebar-accent-foreground: #ffffff; /* White text */
+  --sidebar-border: #166534; /* Medium green borders */
+  --sidebar-ring: rgba(34, 197, 94, 0.3); /* Bright green focus ring */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Updated to environmental gradient with greens and blues */
+    background: linear-gradient(-45deg, #f8fffe, #ecfdf5, #f0f9ff, #f0fdf4);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+  }
+
+  /* Enhanced animations for techy feel */
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75% {
+      background-position: 0% 100%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-15px) rotate(2deg);
+    }
+    66% {
+      transform: translateY(8px) rotate(-2deg);
+    }
+  }
+
+  /* Enhanced pulse animation with green glow */
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(34, 197, 94, 0.8), 0 0 0 1px rgba(34, 197, 94, 0.6);
+    }
+  }
+
+  /* Enhanced glassmorphism with environmental tint */
+  .glass {
+    backdrop-filter: blur(20px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-dark {
+    backdrop-filter: blur(20px) saturate(200%);
+    background-color: rgba(20, 30, 20, 0.8);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Enhanced hover effects with scale and glow */
+  .card-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 25px 50px -12px rgba(34, 197, 94, 0.25), 0 0 0 1px rgba(34, 197, 94, 0.1);
+  }
+
+  .status-indicator {
+    animation: pulse-glow 3s infinite;
+  }
+
+  .floating {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  /* Added new techy animations */
+  @keyframes data-flow {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  .data-flow {
+    animation: data-flow 4s linear infinite;
+  }
+
+  @keyframes circuit-pulse {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .circuit-pulse {
+    animation: circuit-pulse 2s ease-in-out infinite;
+  }
+}
+
+/* Dark mode with deep forest gradient */
+.dark body {
+  background: linear-gradient(-45deg, #0a0f0a, #1a2e1a, #0f172a, #134e4a);
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease infinite;
+}
